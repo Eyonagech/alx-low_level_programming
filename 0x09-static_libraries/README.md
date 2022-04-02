@@ -1,1 +1,1 @@
-stat lib
+static lib
