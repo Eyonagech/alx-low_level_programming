@@ -1,21 +1,16 @@
 #include "main.h"
 
 /**
- * _puts - writes a string to stdout up, not including the null character
- * @str: This is the C string to be written
- * Return: Always 0.
+ * _puts - prints a string to stdout
+ * @str: pointer to the string to print
  */
-
 void _puts(char *str)
 {
-	while (*str != '\0')
+	int i;
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		int a;
-
-		a = *str;
-
-		_putchar(a);
-		str++;
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }

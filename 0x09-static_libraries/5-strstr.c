@@ -1,28 +1,27 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
- * _strstr - check the code for Holberton School students.
- *@haystack:do something
- *@needle:do something more
- * Return: Always 0.
+ * *_strstr - locates a substring
+ * @haystack: string to search in
+ * @needle: substring to look for
+ *
+ * Return: pointer to the beginning of the located substring
+ * or NULL if the substring is not found
  */
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack)
+	int i, j;
+
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		char *Begin = haystack;
-		char *pattern = needle;
-
-		while (*haystack && *pattern && *haystack == *pattern)
+		for (j = 0; needle[j] != '\0'; j++)
 		{
-			haystack++;
-			pattern++;
+			if (haystack[i + j] != needle[j])
+				break;
 		}
-
-		if (!*pattern)
-		{
-			return (Begin);
-		}
-		haystack = Begin + 1;
+		if (!needle[j])
+			return (&haystack[i]);
 	}
-	return (0);
+	return (NULL);
 }
