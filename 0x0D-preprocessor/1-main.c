@@ -1,17 +1,19 @@
-#include "main.h"
+#include "1-pi.h"
+#include "1-pi.h"
+#include <stdio.h>
 
 /**
- * main - check the code
+ * main - check the code for Holberton School students.
  *
  * Return: Always 0.
  */
-
 int main(void)
 {
-    char *concat;
+    float a;
+    float r;
 
-    concat = string_nconcat("Best ", "School !!!", 6);
-    printf("%s\n", concat);
-    free(concat);
+    r = 98;
+    a = PI * r * r;
+    printf("%.3f\n", a);
     return (0);
 }
